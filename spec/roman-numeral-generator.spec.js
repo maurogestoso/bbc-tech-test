@@ -30,4 +30,16 @@ describe("generate", () => {
     expect(generate(400)).toBe("CD");
     expect(generate(900)).toBe("CM");
   });
+
+  it("generates numerals for arbitrarily complex numbers", () => {
+    expect(generate(8)).toBe("VIII");
+    expect(generate(38)).toBe("XXXVIII");
+    expect(generate(88)).toBe("LXXXVIII");
+    expect(generate(99)).toBe("XCIX");
+    expect(generate(267)).toBe("CCLXVII");
+    expect(generate(754)).toBe("DCCLIV");
+    expect(generate(1989)).toBe("MCMLXXXIX");
+    expect(generate(2018)).toBe("MMXVIII");
+    expect(generate(3999)).toBe("MMMCMXCIX");
+  });
 });
