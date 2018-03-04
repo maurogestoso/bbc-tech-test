@@ -1,17 +1,4 @@
-const { validateNumber, isOutOfRange } = require("./helpers");
-
-const generate = number => {
-  number = validateNumber(number);
-  if (isNaN(number) || isOutOfRange(number)) return "";
-
-  return NUMERALS.reduce((result, { value, symbol }) => {
-    while (value <= number) {
-      number -= value;
-      result += symbol;
-    }
-    return result;
-  }, "");
-};
+const { validateNumber, isOutOfRange, repeatSymbol } = require("./helpers");
 
 const NUMERALS = [
   { value: 1000, symbol: "M" },
@@ -28,5 +15,16 @@ const NUMERALS = [
   { value: 4, symbol: "IV" },
   { value: 1, symbol: "I" }
 ];
+
+const generate = number => {
+  number = validateNumber(number);
+  if (isNaN(number) || isOutOfRange(number)) return "";
+
+  return NUMERALS.reduce((result, { value, symbol }) => {
+    const symbolsInNumber = Math.floor(number / value);
+    number %= value;
+    return result + repeatSymbol(symbol, symbolsInNumber);
+  }, "");
+};
 
 module.exports = { generate };
