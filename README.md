@@ -60,9 +60,26 @@ Things to improve:
 
 ## Technical Challenge
 
-### Instructions
-
 Node.js version used: v9.2.1
+NPM version used: v5.6.0
+
+### Usage
+
+To generate a roman numeral through the command line interface, run the NPM `generate` script and pass it a number as an argument:
+
+```
+npm run generate <decimal_number>
+```
+
+#### Example
+
+```
+npm run generate 42
+```
+
+Will output: `The Roman Numeral for 42 is XLII`
+
+#### Test suite
 
 To run the test suite: install dependencies and run the NPM `test` script:
 
@@ -71,7 +88,7 @@ npm install
 npm test
 ```
 
-### Initial thoughts
+### Main thoughts
 
 * This kata reminded me of a problem I solved before: calculating change using the minimum amount of coins. In that problem I traverse the array of valid coins (sorted in descending order of value) and take the value from the target amount whenever the value of the current coin is less than or equal to it.
 
@@ -82,6 +99,8 @@ npm test
 * To implement the subtractive notation I could have implemented logic to limit the repetition of consecutive symbols to 3, but it would have made the code unnecessarily complex. Since the number of "special cases" was small, I decided to add them to the array of numerals and call it a day. If the number of "special cases" was larger or could increase over time, it would be worth adding logic to check them dynamically.
 
 * Although a Java interface was provided as a spec, I implemented it as a method in a Node.js module for simplicity and because it felt more idiomatic to JavaScript, comparable to methods like the ones from the `Math` object.
+
+* I wrote a simple command line interface for reviewers to quickly test the functionality.
 
 ### Final implementation
 

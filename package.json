@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "generate": "node ./src/cli-generate.js",
     "test": "jest",
     "lint": "eslint ./src ./spec"
   },
