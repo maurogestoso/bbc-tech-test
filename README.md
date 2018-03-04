@@ -1,5 +1,15 @@
 # BBC Tech Test
 
+## Table of Contents
+- [Technical Questions](https://github.com/maurogestoso/bbc-tech-test#technical-questions)
+  - [Question #1](https://github.com/maurogestoso/bbc-tech-test#question-1)
+  - [Question #2](https://github.com/maurogestoso/bbc-tech-test#question-2)
+  - [Question #3](https://github.com/maurogestoso/bbc-tech-test#question-3)
+- [Technical Challenge](https://github.com/maurogestoso/bbc-tech-test#technical-challenge)
+  - [Usage](https://github.com/maurogestoso/bbc-tech-test#usage)
+  - [Test Suite](https://github.com/maurogestoso/bbc-tech-test#test-suite)
+  - [Thoughts](https://github.com/maurogestoso/bbc-tech-test#main-thoughts)
+
 ## Technical Questions:
 
 1.  We're looking for people with a real passion for collaboratively creating great software. Please give an example of a software component you have designed and written from concept to deployment, outlining the steps you took. (1000 character limit)
