@@ -25,3 +25,17 @@ describe("validateNumber", () => {
     expect(h.validateNumber(undefined)).toBeNaN();
   });
 });
+
+describe("isOutOfRange", () => {
+  it("returns true if the passed number is out of range [1, 3999]", () => {
+    expect(h.isOutOfRange(-42)).toBe(true);
+    expect(h.isOutOfRange(0)).toBe(true);
+    expect(h.isOutOfRange(4000)).toBe(true);
+    expect(h.isOutOfRange(10000000)).toBe(true);
+  });
+  it("returns false if the passed number is inside range [1, 3999]", () => {
+    expect(h.isOutOfRange(1)).toBe(false);
+    expect(h.isOutOfRange(42)).toBe(false);
+    expect(h.isOutOfRange(3999)).toBe(false);
+  });
+});

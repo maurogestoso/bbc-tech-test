@@ -6,4 +6,11 @@ const validateNumber = num => {
   }
 };
 
-module.exports = { validateNumber };
+const isOutOfRange = num => {
+  const MIN = 1;
+  const MAX = 3999;
+
+  return num < MIN || num > MAX;
+};
+
+module.exports = { validateNumber, isOutOfRange };
