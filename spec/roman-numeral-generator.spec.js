@@ -21,4 +21,13 @@ describe("generate", () => {
     expect(generate(2000)).toBe("MM");
     expect(generate(3000)).toBe("MMM");
   });
+
+  it("generates numerals using subtractive notation instead of 4 consecutive symbols", () => {
+    expect(generate(4)).toBe("IV");
+    expect(generate(9)).toBe("IX");
+    expect(generate(40)).toBe("XL");
+    expect(generate(90)).toBe("XC");
+    expect(generate(400)).toBe("CD");
+    expect(generate(900)).toBe("CM");
+  });
 });
