@@ -1,3 +1,63 @@
+# BBC Tech Test
+
+## Technical Questions:
+
+1.  We're looking for people with a real passion for collaboratively creating great software. Please give an example of a software component you have designed and written from concept to deployment, outlining the steps you took. (1000 character limit)
+
+2.  Using the example that you provided above, tell us about a significant decision you made to solve a technical challenge. Give details of technologies that you chose and why you chose them. (1000 character limit)
+
+3.  Using the example that you provided above, tell us about how you ensured your software was fit for purpose and of high quality. What did you learn and what would you do differently next time to do a better job? (1000 character limit)
+
+### Answers
+
+#### Question #1
+
+I built a video lectures delivery platform for students of our part-time course. The requirements were:
+
+* Users should be able to sign in with their GitHub accounts and be automatically assigned to their corresponding cohort.
+* Teachers should be able to easily publish new content to a cohort according to their progress
+* Videos were already hosted on Vimeo and text content on GH repos
+* The deadline for the start of the course was fairly tight, so speed of development and the ability to user test the platform ASAP were key
+
+Steps:
+
+* Gathered requirements
+* Having easy access to both kinds of users (admins and students) allowed me to write very accurate user stories
+* Drew up the data models and the flow of data fetching from 3rd party APIs
+* Wireframed the views
+* Spiked the Github integration since it was a critical requirement
+* Implemented a prototype of the student side first and gave it to some students to "beta test"
+* Implemented the admin side
+* Refactored, fixed bugs, polished styling
+
+#### Question #2
+
+Speed of development of a working prototype and ease of maintenance where critical requirements for the project. We decided on React for the front-end and Firebase for the back-end, authentication and database.
+
+React allowed us to quickly build our views out of reusable components. We didn't need state management solutions such as Redux since the data flow was fairly straight-forward. We wrapped calls to the Firebase database in our own functions, with a similar API to an ODM like mongoose, which we were familiar with.
+
+Firebase allowed us to have a continuous and very simple deployment process, and since the auth service and the database are integrated, maintenance was completely centralised.
+
+The workflow of the admin side revolves around data stored in our GH organisation (student teams, lecture repos), so instead of duplicating information in our database, we used GH as our "source of truth". This simplified the admin workflow, since most actions could be done through GH itself.
+
+#### Question #3
+
+Good practices:
+
+* Developed a prototype quickly and made heavy use of students as testers. This proved invaluable for finding bugs, improving UX and browser compatibility.
+
+* Testing of our state management and authentication functions.
+
+* Agile practices:
+  * Used GH Projects as our Kanban board
+  * Separation of work back/front end, code reviews and constant communication (2 devs) allowed for rapid development in parallel
+
+Things to improve:
+
+* Writing documentation was sacrificed over speed. This made handover harder.
+* Using GH as a sort of CMS worked well, but it made handling more specific flows more complicated. Putting more data in our DB would have saved unnecessary trips to GH's API and would have enabled better caching.
+* Firebase auth integration simplified things a lot, but its integrated DB solution was too simple. If we followed the previous point, we would have used a better suited DB like MongoDB and benefit from richer features (such as schemas using mongoose).
+
 ## Technical Challenge
 
 ### Instructions
@@ -32,7 +92,7 @@ npm test
 
 * The `generate` method returns an empty string when a numeral can't be generated. I decided on this implementation to avoid breaking the users' code if they decided to compose this function and treat its return value as a string.
 
-* Interestingly, [according the Wikipedia page](https://en.wikipedia.org/wiki/Roman_numerals#Zero), returning `null` would have been historically correct 😁
+* Interestingly, [according the Wikipedia page](https://en.wikipedia.org/wiki/Roman_numerals#Zero), returning `null` for zero would have been historically correct 😁
 
 * I wrote 2 little helper functions to validate the type and the range of the input, improving the readability of the main method.
 
