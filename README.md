@@ -72,8 +72,8 @@ Things to improve:
 
 ## Technical Challenge
 
-Node.js version used: v9.2.1
-NPM version used: v5.6.0
+- Node.js version used: v9.2.1
+- NPM version used: v5.6.0
 
 ### Usage
 
