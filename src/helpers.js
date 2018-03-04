@@ -13,4 +13,12 @@ const isOutOfRange = num => {
   return num < MIN || num > MAX;
 };
 
-module.exports = { validateNumber, isOutOfRange };
+const repeatSymbol = (symbol, times = 1) => {
+  let result = "";
+  for (let i = 0; i < times; i++) {
+    result += symbol;
+  }
+  return result;
+};
+
+module.exports = { validateNumber, isOutOfRange, repeatSymbol };

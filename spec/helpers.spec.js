@@ -39,3 +39,15 @@ describe("isOutOfRange", () => {
     expect(h.isOutOfRange(3999)).toBe(false);
   });
 });
+
+describe("repeatSymbol", () => {
+  test("returns the passed string repeated as many times as the second argument", () => {
+    expect(h.repeatSymbol("x", 0)).toBe("");
+    expect(h.repeatSymbol("a", 1)).toBe("a");
+    expect(h.repeatSymbol("bb", 2)).toBe("bbbb");
+    expect(h.repeatSymbol("Cd", 3)).toBe("CdCdCd");
+  });
+  test("returns the passed string if not passed a 2nd argument (2nd argument defaults to 1)", () => {
+    expect(h.repeatSymbol("d")).toBe("d");
+  });
+});
