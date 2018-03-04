@@ -1,0 +1,17 @@
+{
+  "name": "bbc-tech-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint ./src ./spec"
+  },
+  "keywords": [],
+  "author": "Mauro Gestoso <maurogestoso@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.18.2",
+    "jest": "^22.4.2"
+  }
+}
