@@ -68,6 +68,8 @@ Things to improve:
 * Using GH as a sort of CMS worked well, but it made handling more specific flows more complicated. Putting more data in our DB would have saved unnecessary trips to GH's API and would have enabled better caching.
 * Firebase auth integration simplified things a lot, but its integrated DB solution was too simple. If we followed the previous point, we would have used a better suited DB like MongoDB and benefit from richer features (such as schemas using mongoose).
 
+[Back to top 👆](https://github.com/maurogestoso/bbc-tech-test#bbc-tech-test)
+
 ## Technical Challenge
 
 Node.js version used: v9.2.1
@@ -126,3 +128,5 @@ npm test
 * I wrote 2 little helper functions to validate the type and the range of the input, improving the readability of the main method.
 
 * The method only generates numerals if passed a number or a string that can be parsed as a number. Even though other JS types can be coerced to a number, I decided on this implementation to enforce best practices. Having said that, this could be easily changed by refactoring the `validateNumber` helper function.
+
+[Back to top 👆](https://github.com/maurogestoso/bbc-tech-test#bbc-tech-test)
