@@ -42,4 +42,19 @@ describe("generate", () => {
     expect(generate(2018)).toBe("MMXVIII");
     expect(generate(3999)).toBe("MMMCMXCIX");
   });
+
+  it("returns an empty string when passed an argument with an invalid type", () => {
+    expect(generate(true)).toBe("");
+    expect(generate([])).toBe("");
+    expect(generate({})).toBe("");
+    expect(generate(function() {})).toBe("");
+    expect(generate(null)).toBe("");
+    expect(generate()).toBe("");
+  });
+
+  it("returns an empty string when passed a number outside range [1, 3999]", () => {
+    expect(generate(-42)).toBe("");
+    expect(generate(0)).toBe("");
+    expect(generate(4000)).toBe("");
+  });
 });

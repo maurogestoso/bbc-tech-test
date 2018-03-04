@@ -1,4 +1,9 @@
+const { validateNumber, isOutOfRange } = require("./helpers");
+
 const generate = number => {
+  number = validateNumber(number);
+  if (isNaN(number) || isOutOfRange(number)) return "";
+
   let result = "";
 
   NUMERALS.forEach(({ value, symbol }) => {
@@ -27,4 +32,4 @@ const NUMERALS = [
   { value: 1, symbol: "I" }
 ];
 
-module.exports = { generate, NUMERALS };
+module.exports = { generate };
