@@ -4,16 +4,13 @@ const generate = number => {
   number = validateNumber(number);
   if (isNaN(number) || isOutOfRange(number)) return "";
 
-  let result = "";
-
-  NUMERALS.forEach(({ value, symbol }) => {
+  return NUMERALS.reduce((result, { value, symbol }) => {
     while (value <= number) {
       number -= value;
       result += symbol;
     }
-  });
-
-  return result;
+    return result;
+  }, "");
 };
 
 const NUMERALS = [
